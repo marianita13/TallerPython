@@ -5,7 +5,7 @@ while (bandera==True):
     os.system('cls')
     ejercicio = int(input("Para acabar con el programa digita 0.\nDigite el número del ejercicio que desea ejecutar (1 al 21): "))
     if (ejercicio==0):
-        bandera==False
+        bandera=False
 
     elif (ejercicio==1):
         edad = int(input("Digite su edad por favor: "))
@@ -457,41 +457,94 @@ Digita una opción: '''))
                         if (equipo==1.1):
                             os.system('clear')
                             nombreEquipo=input("Digite el nombre del equipo: ")
-                            grupoEquipo=input("A que grupo pertenece: ")
+                            banderaG=True
+                            while (banderaG==True):
+                                grupoEquipo=int(input("1. Cali\n2. Bucaramanga\n3. Medellin\n4. Bogota\nA que grupo pertenece: "))
+                                if (grupoEquipo==1):
+                                    grupoEquipo="Cali"
+                                    banderaG=False
+                                elif (grupoEquipo==2):
+                                    grupoEquipo="Bucaramanga"
+                                    banderaG=False
+                                elif (grupoEquipo==3):
+                                    grupoEquipo="Medellin"
+                                    banderaG=False
+                                elif (grupoEquipo==4):
+                                    grupoEquipo="Bogota"
+                                    banderaG=False
+                                else:
+                                    print("Digita una opcion del menu")
                             nombreJugador=input("Digite el nombre del jugador: ")
                             nroDorsal=int(input("Digite el numero del dorsal del jugador: "))
-                            posicion=(input("Digite la posicion del jugador: "))
+                            os.system('clear')
+                            banderaP=True
+                            while(banderaP==True):
+                                posicion=int(input("1. Arquero\n2. Delantero\n3. Mediocampista\n4. Defensa\nDigite la posicion del jugador: "))
+                                if (posicion==1):
+                                    posicion="Arquero"
+                                    banderaP=False
+                                elif (posicion==2):
+                                    posicion="Delantero"
+                                    banderaP=False
+                                elif (posicion==3):
+                                    posicion="Mediocampista"
+                                    banderaP=False
+                                elif (posicion==4):
+                                    posicion="Defensa"
+                                    banderaP=False
+                                else:
+                                    print("Digita una opcion del menu")
                             edad=int(input("Digite la edad del jugador: "))
-                            listaEquipo=[nombreEquipo,nombreJugador,nroDorsal,posicion,edad]
+                            listaEquipo=[nombreJugador,nroDorsal,posicion,edad]
                                 
                             if (grupoEquipo=="cali"):
-                                if (len(cali)<4):   
-                                    cali.append(listaEquipo)
+                                for i,paises in enumerate(cali):
+                                    if (nombreEquipo in paises):
+                                        print("Este pais ya esta inscrito")
+                                        break
+                                    else:
+                                        cali.append([nombreEquipo])
+                                    print(cali)
+                                    cali[i].append(listaEquipo)
+                                    input()
+                                    print('')
                                 else:
                                     print("Solo se pueden registrar 4 equipos por grupo")
                             elif (grupoEquipo=="bucaramanga"):
-                                if (len(bucaramanga)<4):   
+                                if (len(bucaramanga)<4):
+                                    bucaramanga.append([nombreEquipo])
                                     bucaramanga.append(listaEquipo)
                                 else:
                                     print("Solo se pueden registrar 4 equipos por grupo")
                             elif (grupoEquipo=="medellin"):
-                                if (len(medellin)<4):   
+                                if (len(medellin)<4):
+                                    medellin.append([nombreEquipo])
                                     medellin.append(listaEquipo)
                                 else:
                                     print("Solo se pueden registrar 4 equipos por grupo")
                             elif (grupoEquipo=="bogota"):
-                                if (len(bogota)<4):   
+                                if (len(bogota)<4):
+                                    bogota.append([nombreEquipo])
                                     bogota.append(listaEquipo)
                                 else:
                                     print("Solo se pueden registrar 4 equipos por grupo")
                         elif (equipo==1.2):
-                            bandera=True
                             os.system('clear')
                             nombreEquipo=input("Digite el nombre del equipo: ")
                             grupoEquipo=input("A que grupo pertenece: ")
                             nombreTecnico=input("Digite el nombre del cuerpo tecnico: ")
                             cargoTecnico=input("Digite el cargo del cuerpo tecnico: ")
-                            edadTecnico=input("Digite la edad del cuerpo tecnico: ")
+                            edadTecnico=int(input("Digite la edad del cuerpo tecnico: "))
+                            listaTecnicos=[nombreTecnico,cargoTecnico,edadTecnico]
+
+                            if (grupoEquipo=="cali"):
+                                for i,equipo3 in enumerate(cali):
+                                    if (grupoEquipo in equipo3):
+                                        cali[i].append(listaTecnicos)
+                                print(cali)
+                                input()
+                                print('')
+
                         elif (equipo==1.3):
                             pass
             ejercicio=0
