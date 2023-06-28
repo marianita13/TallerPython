@@ -320,51 +320,180 @@ while (bandera==True):
     elif (ejercicio==20):
         menu=0
         listaCampersArtemis=[]
+        listaCampersSputnik=[]
+        codigosCampers=[]
         while (menu!=3):
             menu=float(input('''1.CREAR GRUPO ARTEMIS:
-            1.1 Listar campers de Artemis
-            1.2 Agregar campers de Artemis
-            1.3 Eliminar campers de Artemis
-            1.4 Ordenar alfabeticamente en la lista de Artemis
-            1.5 Buscar camper en la lista de Artemis
+1.1 Listar campers de Artemis
+1.2 Agregar campers de Artemis
+1.3 Eliminar campers de Artemis
+1.4 Ordenar alfabeticamente en la lista de Artemis
+1.5 Buscar camper en la lista de Artemis
+
+2. CREAR GRUPO SPUTNIK:
+2.1 Listar campers de Sputnik
+2.2 Agregar campers de Sputnik
+2.3 Eliminar campers de Sputnik
+2.4 Ordenar alfabeticamente en la lista de Sputnik
+2.5 Buscar camper en la lista de Sputnik
+
+3. Salir
+:'''))
             
-            2. CREAR GRUPO SPUTNIK:
-            2.1 Listar campers de Sputnik
-            2.2 Agregar campers de Sputnik
-            2.3 Eliminar campers de Sputnik
-            2.4 Ordenar alfabeticamente en la lista de Sputnik
-            2.5 Buscar camper en la lista de Sputnik
-            
-            3. Salir
-            :'''))
+            match menu:       
+                case 1.1:
+                    os.system('clear')
+                    if (len(listaCampersArtemis)==0):
+                        print("No hay campers registrados en Artemis")
+                    else:
+                        for numero,nombre in enumerate(listaCampersArtemis,1):
+                            print(numero,nombre)
+                        print("")
+                case 1.2:
+                    os.system('clear')
+                    nombreCamper=input("Nombre del Camper: ")
+                    listaCampersArtemis.append(nombreCamper)
+                    for numero,nombre in enumerate(listaCampersArtemis,1):
+                        print(numero,nombre)
+                    print("")                 
+                case 1.3:
+                    os.system('clear')
+                    eliminar=(input("¿Cual Camper quiere eliminar?: ")).lower()
 
-            if (menu==1.1):
-                if (len(listaCampersArtemis)==0):
-                    print("No hay campers registrados en Artemis")
-                else:
-                    print(listaCampersArtemis)
-                os.system('cls')
+                    for a in range(len(listaCampersArtemis)):
+                        if (eliminar in listaCampersArtemis):
+                            listaCampersArtemis.remove(eliminar)
+                    for numero,nombre in enumerate(listaCampersArtemis,1):
+                        print(numero,nombre)
+                    print("")
+                case 1.4:
+                    os.system('clear')
+                    listaCampersArtemis.sort()
+                    for numero,nombre in enumerate(listaCampersArtemis,1):
+                        print(numero,nombre)
+                    print("")
+                        
+                case 1.5:
+                    os.system('clear')
+                    busqueda=input("Nombre del Camper que desea encontrar:").lower()
+                    for z in range(len(listaCampersArtemis)):
+                        if (busqueda in listaCampersArtemis):
+                            print(f'{busqueda} si se encuentra en el grupo.')
+                            break
+                    print("")
+                    
+                case 2.1:
+                    os.system('clear')
+                    if (len(listaCampersSputnik)==0):
+                        print("No hay campers registrados en Sputnik")
+                    else:
+                        for numero2,nombre2 in enumerate(listaCampersSputnik,1):
+                            print(numero2,nombre2)
+                        print("")
+                case 2.2:
+                    os.system('clear')
+                    nombreCamper2=input("Nombre del Camper: ")
+                    listaCampersSputnik.append(nombreCamper2)
+                    for numero2,nombre2 in enumerate(listaCampersSputnik,1):
+                        print(numero2,nombre2)
+                    print("")                 
+                case 2.3:
+                    os.system('clear')
+                    eliminar=(input("¿Cual Camper quiere eliminar?: ")).lower()
 
-            elif (menu==1.2):
-                nombreCamper=input("Nombre del Camper: ")
-                codigoCamper=input("Codigo del Camper: ")
-                listaCampersArtemis.append(nombreCamper)
-                os.system('cls')
-
-            elif (menu==1.3):
-                eliminar=(input("¿Cual Camper quiere eliminar?: "))
-
-                for a in range(len(listaCampersArtemis)):
-                    if (eliminar in listaCampersArtemis):
-                        listaCampersArtemis.remove(eliminar)
-                os.system('pause')
-
-            elif (menu==1.4):
-                listaCampersArtemis.sort()
-                print(listaCampersArtemis)
-
-            elif (menu==1.5):
-                busqueda=input("Nombre del Camper que desea encontrar:")
-
+                    for a in range(len(listaCampersSputnik)):
+                        if (eliminar in listaCampersSputnik):
+                            listaCampersSputnik.remove(eliminar)
+                    for numero2,nombre2 in enumerate(listaCampersSputnik,1):
+                        print(numero2,nombre2)
+                    print("")
+                case 2.4:
+                    os.system('clear')
+                    listaCampersSputnik.sort()
+                    for numero2,nombre2 in enumerate(listaCampersSputnik,1):
+                        print(numero2,nombre2)
+                    print("")
+                        
+                case 2.5:
+                    os.system('clear')
+                    busqueda=input("Nombre del Camper que desea encontrar:").lower()
+                    for z in range(len(listaCampersSputnik)):
+                        if (busqueda in listaCampersSputnik):
+                            print(f'{busqueda} si se encuentra en el grupo.')
+                            break
+                    print("")
+                
+                case 3:
+                    os.system('clear')
+                    print("Gracias por usar nuestros servicios.")
+                    break
+        ejercicio=0
+        
+    elif (ejercicio==21):
+        cali=[]
+        medellin=[]
+        bucaramanga=[]
+        bogota=[]
+        opciones = 0
+        while(opciones!=8):
+            os.system('clear')
+            opciones = int(input('''1.Registro de Equipo.
+2. Registro de fecha.
+3. Mostrar tabla de estadisticas.
+4. Consultar informacion por equipo.
+5. Mostrar equipos clasificados a 8vos.
+6. Mostrar el listado de jugadores de un equipo.
+7. Equipo que mayor cantidad de goles marco por cada grupo.
+8. Salir.
+Digita una opción: '''))
+        
+            match opciones:
+                case 1:
+                    os.system('clear')
+                    equipo = 0
+                    while (equipo!=1.4):
+                        os.system('clear')
+                        equipo = float(input("1.1 Registro de jugadores.\n1.2 Registro de cuerpo técnico.\n1.3 Registro de cuerpo medico.\n1.4 Salir\nElije una opción: "))
+                        if (equipo==1.1):
+                            os.system('clear')
+                            nombreEquipo=input("Digite el nombre del equipo: ")
+                            grupoEquipo=input("A que grupo pertenece: ")
+                            nombreJugador=input("Digite el nombre del jugador: ")
+                            nroDorsal=int(input("Digite el numero del dorsal del jugador: "))
+                            posicion=(input("Digite la posicion del jugador: "))
+                            edad=int(input("Digite la edad del jugador: "))
+                            listaEquipo=[nombreEquipo,nombreJugador,nroDorsal,posicion,edad]
+                                
+                            if (grupoEquipo=="cali"):
+                                if (len(cali)<4):   
+                                    cali.append(listaEquipo)
+                                else:
+                                    print("Solo se pueden registrar 4 equipos por grupo")
+                            elif (grupoEquipo=="bucaramanga"):
+                                if (len(bucaramanga)<4):   
+                                    bucaramanga.append(listaEquipo)
+                                else:
+                                    print("Solo se pueden registrar 4 equipos por grupo")
+                            elif (grupoEquipo=="medellin"):
+                                if (len(medellin)<4):   
+                                    medellin.append(listaEquipo)
+                                else:
+                                    print("Solo se pueden registrar 4 equipos por grupo")
+                            elif (grupoEquipo=="bogota"):
+                                if (len(bogota)<4):   
+                                    bogota.append(listaEquipo)
+                                else:
+                                    print("Solo se pueden registrar 4 equipos por grupo")
+                        elif (equipo==1.2):
+                            bandera=True
+                            os.system('clear')
+                            nombreEquipo=input("Digite el nombre del equipo: ")
+                            grupoEquipo=input("A que grupo pertenece: ")
+                            nombreTecnico=input("Digite el nombre del cuerpo tecnico: ")
+                            cargoTecnico=input("Digite el cargo del cuerpo tecnico: ")
+                            edadTecnico=input("Digite la edad del cuerpo tecnico: ")
+                        elif (equipo==1.3):
+                            pass
+            ejercicio=0
     else:
         print("Escoje un número del 1 al 21")
