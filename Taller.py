@@ -44,6 +44,8 @@ while (bandera==True):
 
         if ((numero3%2)==0):
             print("El número es par")
+        else:
+            print("El número es impar")
         os.system('pause')
         ejercicio=0
 
@@ -273,7 +275,6 @@ while (bandera==True):
                 contador3+=1
             else:
                 pass
-            print(sumatoria, contador3)
         print(f"El promedio de los numeros ingresados es: {sumatoria/contador3}")
         os.system('pause')
         ejercicio=0
@@ -323,6 +324,7 @@ while (bandera==True):
         listaCampersSputnik=[]
         codigosCampers=[]
         while (menu!=3):
+            os.system('cls')
             menu=float(input('''1.CREAR GRUPO ARTEMIS:
 1.1 Listar campers de Artemis
 1.2 Agregar campers de Artemis
@@ -342,22 +344,25 @@ while (bandera==True):
             
             match menu:       
                 case 1.1:
-                    os.system('clear')
+                    os.system('cls')
                     if (len(listaCampersArtemis)==0):
                         print("No hay campers registrados en Artemis")
+                        os.system('pause')
                     else:
                         for numero,nombre in enumerate(listaCampersArtemis,1):
                             print(numero,nombre)
                         print("")
+                        os.system('pause')
                 case 1.2:
-                    os.system('clear')
+                    os.system('cls')
                     nombreCamper=input("Nombre del Camper: ")
                     listaCampersArtemis.append(nombreCamper)
                     for numero,nombre in enumerate(listaCampersArtemis,1):
                         print(numero,nombre)
-                    print("")                 
+                    print("")
+                    os.system('pause')                
                 case 1.3:
-                    os.system('clear')
+                    os.system('cls')
                     eliminar=(input("¿Cual Camper quiere eliminar?: ")).lower()
 
                     for a in range(len(listaCampersArtemis)):
@@ -366,39 +371,44 @@ while (bandera==True):
                     for numero,nombre in enumerate(listaCampersArtemis,1):
                         print(numero,nombre)
                     print("")
+                    os.system('pause')
                 case 1.4:
-                    os.system('clear')
+                    os.system('cls')
                     listaCampersArtemis.sort()
                     for numero,nombre in enumerate(listaCampersArtemis,1):
                         print(numero,nombre)
                     print("")
+                    os.system('pause')
                         
                 case 1.5:
-                    os.system('clear')
+                    os.system('cls')
                     busqueda=input("Nombre del Camper que desea encontrar:").lower()
                     for z in range(len(listaCampersArtemis)):
                         if (busqueda in listaCampersArtemis):
                             print(f'{busqueda} si se encuentra en el grupo.')
                             break
                     print("")
+                    os.system('pause')
                     
                 case 2.1:
-                    os.system('clear')
+                    os.system('cls')
                     if (len(listaCampersSputnik)==0):
                         print("No hay campers registrados en Sputnik")
                     else:
                         for numero2,nombre2 in enumerate(listaCampersSputnik,1):
                             print(numero2,nombre2)
                         print("")
+                    os.system('pause')
                 case 2.2:
-                    os.system('clear')
+                    os.system('cls')
                     nombreCamper2=input("Nombre del Camper: ")
                     listaCampersSputnik.append(nombreCamper2)
                     for numero2,nombre2 in enumerate(listaCampersSputnik,1):
                         print(numero2,nombre2)
-                    print("")                 
+                    print("")    
+                    os.system('pause')             
                 case 2.3:
-                    os.system('clear')
+                    os.system('cls')
                     eliminar=(input("¿Cual Camper quiere eliminar?: ")).lower()
 
                     for a in range(len(listaCampersSputnik)):
@@ -407,25 +417,29 @@ while (bandera==True):
                     for numero2,nombre2 in enumerate(listaCampersSputnik,1):
                         print(numero2,nombre2)
                     print("")
+                    os.system('pause')
                 case 2.4:
-                    os.system('clear')
+                    os.system('cls')
                     listaCampersSputnik.sort()
                     for numero2,nombre2 in enumerate(listaCampersSputnik,1):
                         print(numero2,nombre2)
                     print("")
+                    os.system('pause')
                         
                 case 2.5:
-                    os.system('clear')
+                    os.system('cls')
                     busqueda=input("Nombre del Camper que desea encontrar:").lower()
                     for z in range(len(listaCampersSputnik)):
                         if (busqueda in listaCampersSputnik):
                             print(f'{busqueda} si se encuentra en el grupo.')
                             break
                     print("")
+                    os.system('pause')
                 
                 case 3:
-                    os.system('clear')
+                    os.system('cls')
                     print("Gracias por usar nuestros servicios.")
+                    os.system('pause')
                     break
         ejercicio=0
         
@@ -436,7 +450,7 @@ while (bandera==True):
         bogota=[]
         opciones = 0
         while(opciones!=8):
-            os.system('clear')
+            os.system('cls')
             opciones = int(input('''1.Registro de Equipo.
 2. Registro de fecha.
 3. Mostrar tabla de estadisticas.
@@ -449,34 +463,35 @@ Digita una opción: '''))
         
             match opciones:
                 case 1:
-                    os.system('clear')
+                    os.system('cls')
                     equipo = 0
                     while (equipo!=1.4):
-                        os.system('clear')
+                        os.system('cls')
                         equipo = float(input("1.1 Registro de jugadores.\n1.2 Registro de cuerpo técnico.\n1.3 Registro de cuerpo medico.\n1.4 Salir\nElije una opción: "))
                         if (equipo==1.1):
-                            os.system('clear')
+                            os.system('cls')
                             nombreEquipo=input("Digite el nombre del equipo: ")
                             banderaG=True
                             while (banderaG==True):
                                 grupoEquipo=int(input("1. Cali\n2. Bucaramanga\n3. Medellin\n4. Bogota\nA que grupo pertenece: "))
                                 if (grupoEquipo==1):
-                                    grupoEquipo="Cali"
+                                    grupoEquipo="cali"
                                     banderaG=False
                                 elif (grupoEquipo==2):
-                                    grupoEquipo="Bucaramanga"
+                                    grupoEquipo="bucaramanga"
                                     banderaG=False
                                 elif (grupoEquipo==3):
-                                    grupoEquipo="Medellin"
+                                    grupoEquipo="medellin"
                                     banderaG=False
                                 elif (grupoEquipo==4):
-                                    grupoEquipo="Bogota"
+                                    grupoEquipo="bogota"
                                     banderaG=False
                                 else:
                                     print("Digita una opcion del menu")
                             nombreJugador=input("Digite el nombre del jugador: ")
                             nroDorsal=int(input("Digite el numero del dorsal del jugador: "))
-                            os.system('clear')
+                            os.system('cls')
+
                             banderaP=True
                             while(banderaP==True):
                                 posicion=int(input("1. Arquero\n2. Delantero\n3. Mediocampista\n4. Defensa\nDigite la posicion del jugador: "))
@@ -495,58 +510,317 @@ Digita una opción: '''))
                                 else:
                                     print("Digita una opcion del menu")
                             edad=int(input("Digite la edad del jugador: "))
-                            listaEquipo=[nombreJugador,nroDorsal,posicion,edad]
-                                
-                            if (grupoEquipo=="cali"):
-                                for i,paises in enumerate(cali):
-                                    if (nombreEquipo in paises):
-                                        print("Este pais ya esta inscrito")
-                                        break
-                                    else:
-                                        cali.append([nombreEquipo])
-                                    print(cali)
-                                    cali[i].append(listaEquipo)
-                                    input()
-                                    print('')
-                                else:
-                                    print("Solo se pueden registrar 4 equipos por grupo")
-                            elif (grupoEquipo=="bucaramanga"):
-                                if (len(bucaramanga)<4):
-                                    bucaramanga.append([nombreEquipo])
-                                    bucaramanga.append(listaEquipo)
-                                else:
-                                    print("Solo se pueden registrar 4 equipos por grupo")
-                            elif (grupoEquipo=="medellin"):
-                                if (len(medellin)<4):
-                                    medellin.append([nombreEquipo])
-                                    medellin.append(listaEquipo)
-                                else:
-                                    print("Solo se pueden registrar 4 equipos por grupo")
-                            elif (grupoEquipo=="bogota"):
-                                if (len(bogota)<4):
-                                    bogota.append([nombreEquipo])
-                                    bogota.append(listaEquipo)
-                                else:
-                                    print("Solo se pueden registrar 4 equipos por grupo")
-                        elif (equipo==1.2):
-                            os.system('clear')
-                            nombreEquipo=input("Digite el nombre del equipo: ")
-                            grupoEquipo=input("A que grupo pertenece: ")
-                            nombreTecnico=input("Digite el nombre del cuerpo tecnico: ")
-                            cargoTecnico=input("Digite el cargo del cuerpo tecnico: ")
-                            edadTecnico=int(input("Digite la edad del cuerpo tecnico: "))
-                            listaTecnicos=[nombreTecnico,cargoTecnico,edadTecnico]
 
                             if (grupoEquipo=="cali"):
-                                for i,equipo3 in enumerate(cali):
-                                    if (grupoEquipo in equipo3):
-                                        cali[i].append(listaTecnicos)
-                                print(cali)
-                                input()
-                                print('')
+                                jugadores=[]
+                                if (len(cali)==0):
+                                    jugadores=[nombreEquipo,[]]
+                                    prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                    jugadores[1].append(prueba)
+                                if (len(cali)>=1):
+                                    for i,pais in enumerate(cali):
+                                        if pais[i]==nombreEquipo:
+                                            prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                            cali[i][1].append(prueba)
+                                            print(cali)
+                                            os.system('pause')
+                                            banderaJ=True
+                                        else:
+                                            banderaJ=False
+                                    if (banderaJ==False):
+                                        jugadores=[nombreEquipo,[]]
+                                        prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                        jugadores[1].append(prueba)
+                                        cali.append(jugadores)
+                                        print(cali)
+                                        os.system('pause')
+                                else:
+                                    cali.append(jugadores)
+                                    print(cali)
+                                    os.system('pause')
+
+                            elif (grupoEquipo=="bucaramanga"):
+                                jugadores=[]
+                                if (len(bucaramanga)==0):
+                                    jugadores=[nombreEquipo,[]]
+                                    prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                    jugadores[1].append(prueba)
+                                if (len(bucaramanga)>=1):
+                                    for i,pais in enumerate(bucaramanga):
+                                        if pais[i]==nombreEquipo:
+                                            prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                            bucaramanga[i][1].append(prueba)
+                                            print(bucaramanga)
+                                            os.system('pause')
+                                            banderaJ=True
+                                        else:
+                                            banderaJ=False
+                                    if (banderaJ==False):
+                                        jugadores=[nombreEquipo,[]]
+                                        prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                        jugadores[1].append(prueba)
+                                        bucaramanga.append(jugadores)
+                                        print(bucaramanga)
+                                        os.system('pause')
+                                else:
+                                    bucaramanga.append(jugadores)
+                                    print(bucaramanga)
+                                    os.system('pause')
+                            
+                            elif (grupoEquipo=="medellin"):
+                                jugadores=[]
+                                if (len(medellin)==0):
+                                    jugadores=[nombreEquipo,[]]
+                                    prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                    jugadores[1].append(prueba)
+                                if (len(medellin)>=1):
+                                    for i,pais in enumerate(medellin):
+                                        if pais[i]==nombreEquipo:
+                                            prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                            medellin[i][1].append(prueba)
+                                            print(medellin)
+                                            os.system('pause')
+                                            banderaJ=True
+                                        else:
+                                            banderaJ=False
+                                    if (banderaJ==False):
+                                        jugadores=[nombreEquipo,[]]
+                                        prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                        jugadores[1].append(prueba)
+                                        medellin.append(jugadores)
+                                        print(medellin)
+                                        os.system('pause')
+                                else:
+                                    medellin.append(jugadores)
+                                    print(medellin)
+                                    os.system('pause')
+                            
+                            elif (grupoEquipo=="bogota"):
+                                jugadores=[]
+                                if (len(bogota)==0):
+                                    jugadores=[nombreEquipo,[]]
+                                    prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                    jugadores[1].append(prueba)
+                                if (len(bogota)>=1):
+                                    for i,pais in enumerate(bogota):
+                                        if pais[i]==nombreEquipo:
+                                            prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                            bogota[i][1].append(prueba)
+                                            print(bogota)
+                                            os.system('pause')
+                                            banderaJ=True
+                                        else:
+                                            banderaJ=False
+                                    if (banderaJ==False):
+                                        jugadores=[nombreEquipo,[]]
+                                        prueba=[nombreJugador,nroDorsal,posicion,edad]
+                                        jugadores[1].append(prueba)
+                                        bogota.append(jugadores)
+                                        print(bogota)
+                                        os.system('pause')
+                                else:
+                                    bogota.append(jugadores)
+                                    print(bogota)
+                                    os.system('pause')
+                        
+                        elif (equipo==1.2):
+                            os.system('cls')
+                            nombreEquipo=input("Digite el nombre del equipo: ")
+                            banderaG=True
+                            while (banderaG==True):
+                                grupoEquipo=int(input("1. Cali\n2. Bucaramanga\n3. Medellin\n4. Bogota\nA que grupo pertenece: "))
+                                if (grupoEquipo==1):
+                                    grupoEquipo="cali"
+                                    banderaG=False
+                                elif (grupoEquipo==2):
+                                    grupoEquipo="bucaramanga"
+                                    banderaG=False
+                                elif (grupoEquipo==3):
+                                    grupoEquipo="medellin"
+                                    banderaG=False
+                                elif (grupoEquipo==4):
+                                    grupoEquipo="bogota"
+                                    banderaG=False
+                                else:
+                                    print("Digita una opcion del menu")
+                                    os.system('pause')
+                            nombreTecnico=input("Digite el nombre del cuerpo tecnico: ")
+                            banderaC=True
+                            while(banderaC==True):
+                                cargoTecnico=int(input("1. Entrenador\n2. Psicologo\n3. Analista\nDigite el cargo Tecnico: "))
+                                if (cargoTecnico==1):
+                                    cargoTecnico="entrenador"
+                                    banderaC=False
+                                elif (cargoTecnico==2):
+                                    cargoTecnico="psicologo"
+                                    banderaC=False
+                                elif (cargoTecnico==3):
+                                    cargoTecnico="analista"
+                                    banderaC=False
+                                else:
+                                    print("Digita una opcion del menu")
+                                    os.system('pause')
+                            edadTecnico=int(input("Digite la edad del cuerpo tecnico: "))
+
+                            if (grupoEquipo=="cali"):
+                                tecnicos=[]
+                                for i,pais in enumerate(cali):
+                                    if pais[i]==nombreEquipo:
+                                        listaTecnicos=[nombreTecnico,cargoTecnico,edadTecnico]
+                                        tecnicos.append(listaTecnicos)
+                                        if (len(cali[i])==2):
+                                            cali[i].append(tecnicos)
+                                            print(cali)
+                                            os.system('pause')
+                                        elif (len(cali[i])>2):
+                                            cali[i][2].append(listaTecnicos)
+                                            print(cali)
+                                            os.system('pause')
+
+                            elif (grupoEquipo=="bucaramanga"):
+                                tecnicos=[]
+                                for i,pais in enumerate(bucaramanga):
+                                    if pais[i]==nombreEquipo:
+                                        listaTecnicos=[nombreTecnico,cargoTecnico,edadTecnico]
+                                        tecnicos.append(listaTecnicos)
+                                        if (len(bucaramanga[i])==2):
+                                            bucaramanga[i].append(tecnicos)
+                                            print(bucaramanga)
+                                            os.system('pause')
+                                        elif (len(bucaramanga[i])>2):
+                                            bucaramanga[i][2].append(listaTecnicos)
+                                            print(bucaramanga)
+                                            os.system('pause')
+
+                            elif (grupoEquipo=="medellin"):
+                                tecnicos=[]
+                                for i,pais in enumerate(medellin):
+                                    if pais[i]==nombreEquipo:
+                                        listaTecnicos=[nombreTecnico,cargoTecnico,edadTecnico]
+                                        tecnicos.append(listaTecnicos)
+                                        if (len(medellin[i])==2):
+                                            medellin[i].append(tecnicos)
+                                            print(medellin)
+                                            os.system('pause')
+                                        elif (len(medellin[i])>2):
+                                            medellin[i][2].append(listaTecnicos)
+                                            print(medellin)
+                                            os.system('pause')
+
+                            elif (grupoEquipo=="bogota"):
+                                tecnicos=[]
+                                for i,pais in enumerate(bogota):
+                                    if pais[i]==nombreEquipo:
+                                        listaTecnicos=[nombreTecnico,cargoTecnico,edadTecnico]
+                                        tecnicos.append(listaTecnicos)
+                                        if (len(bogota[i])==2):
+                                            bogota[i].append(tecnicos)
+                                            print(bogota)
+                                            os.system('pause')
+                                        elif (len(bogota[i])>2):
+                                            bogota[i][2].append(listaTecnicos)
+                                            print(bogota)
+                                            os.system('pause')
 
                         elif (equipo==1.3):
-                            pass
+                            os.system('cls')
+                            nombreEquipo=input("Digite el nombre del equipo: ")
+                            banderaGM=True
+                            while (banderaGM==True):
+                                grupoEquipo=int(input("1. Cali\n2. Bucaramanga\n3. Medellin\n4. Bogota\nA que grupo pertenece: "))
+                                if (grupoEquipo==1):
+                                    grupoEquipo="cali"
+                                    banderaGM=False
+                                elif (grupoEquipo==2):
+                                    grupoEquipo="bucaramanga"
+                                    banderaGM=False
+                                elif (grupoEquipo==3):
+                                    grupoEquipo="medellin"
+                                    banderaGM=False
+                                elif (grupoEquipo==4):
+                                    grupoEquipo="bogota"
+                                    banderaGM=False
+                                else:
+                                    print("Digita una opcion del menu")
+                                    os.system('pause')
+
+                            nombreMedico=input("Digite el nombre del medico: ")
+                            banderaEM=True
+                            while(banderaEM==True):
+                                especialidad=int(input("1. Neurologo\n2. Ortopedista\n3. General\nDigite la especialidad del doctor: "))
+                                if (especialidad==1):
+                                    especialidad="neurologo"
+                                    banderaEM=False
+                                elif (especialidad==2):
+                                    especialidad="ortopedista"
+                                    banderaEM=False
+                                elif (especialidad==3):
+                                    especialidad="general"
+                                    banderaEM=False
+                                else:
+                                    print("Digita una opcion del menu")
+                                    os.system('pause')   
+                            edadMedico=int(input("Digite la edad del medico: "))
+
+                            if (grupoEquipo=="cali"):
+                                medicos=[]
+                                for i,pais in enumerate(cali):
+                                    if pais[i]==nombreEquipo:
+                                        listaMedicos=[nombreMedico,especialidad,edadMedico]
+                                        medicos.append(listaMedicos)
+                                        if (len(cali[i])==3):
+                                            cali[i].append(medicos)
+                                            print(cali)
+                                            os.system('pause')
+                                        elif (len(cali[i])>3):
+                                            cali[i][3].append(listaMedicos)
+                                            print(cali)
+                                            os.system('pause')
+                            
+                            elif (grupoEquipo=="bucaramanga"):
+                                medicos=[]
+                                for i,pais in enumerate(bucaramanga):
+                                    if pais[i]==nombreEquipo:
+                                        listaMedicos=[nombreMedico,especialidad,edadMedico]
+                                        medicos.append(listaMedicos)
+                                        if (len(bucaramanga[i])==3):
+                                            bucaramanga[i].append(medicos)
+                                            print(bucaramanga)
+                                            os.system('pause')
+                                        elif (len(bucaramanga[i])>3):
+                                            bucaramanga[i][3].append(listaMedicos)
+                                            print(bucaramanga)
+                                            os.system('pause')
+
+                            elif (grupoEquipo=="medellin"):
+                                medicos=[]
+                                for i,pais in enumerate(medellin):
+                                    if pais[i]==nombreEquipo:
+                                        listaMedicos=[nombreMedico,especialidad,edadMedico]
+                                        medicos.append(listaMedicos)
+                                        if (len(medellin[i])==3):
+                                            medellin[i].append(medicos)
+                                            print(medellin)
+                                            os.system('pause')
+                                        elif (len(medellin[i])>3):
+                                            medellin[i][3].append(listaMedicos)
+                                            print(medellin)
+                                            os.system('pause')
+                            
+                            elif (grupoEquipo=="bogota"):
+                                medicos=[]
+                                for i,pais in enumerate(bogota):
+                                    if pais[i]==nombreEquipo:
+                                        listaMedicos=[nombreMedico,especialidad,edadMedico]
+                                        medicos.append(listaMedicos)
+                                        if (len(bogota[i])==3):
+                                            bogota[i].append(medicos)
+                                            print(bogota)
+                                            os.system('pause')
+                                        elif (len(bogota[i])>3):
+                                            bogota[i][3].append(listaMedicos)
+                                            print(bogota)
+                                            os.system('pause')
             ejercicio=0
     else:
         print("Escoje un número del 1 al 21")
