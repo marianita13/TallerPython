@@ -27,9 +27,9 @@ puede formar un triángulo o no.
 
 En términos más precisos, si tienes tres segmentos con longitudes a, b y c, donde a, b y c son números positivos, entonces estos segmentos pueden formar un triángulo válido si y solo si se cumple la siguiente condición:
 
-a + b > c
-a + c > b
-b + c > a
+- a + b > c
+- a + c > b
+- b + c > a
 
 Si alguna de estas desigualdades no se cumple, entonces los segmentos no pueden formar un triángulo válido.
 
@@ -50,11 +50,11 @@ La desigualdad triangular es un principio fundamental en la geometría y se util
 18. Crea un programa que solicite al usuario ingresar un número y luego muestre la suma de los dígitos de ese número utilizando un bucle while.
 
 19. Construya un algoritmo en Python, que permita ingresar la información de un empleado e imprima el nombre, los apellidos y la antigüedad. Los datos que se deben solicitar son los siguientes:
-*Nombre
-*Teléfono
-*Año de ingreso a la empresa
-*Apellidos
-*Edad.
+* Nombre
+* Teléfono
+* Año de ingreso a la empresa
+* Apellidos
+* Edad.
 
 20. En su casa le solicitan que realice un algoritmo en Python, que permita calcular el valor a pagar por concepto de energía eléctrica. Los datos que se conocen son los siguientes:
 
